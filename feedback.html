@@ -123,9 +123,10 @@ h6 {
             .then(function (myJson) {
                 const rating = Object.values(myJson.ratings);
                 const myChilds = Array.from(box.children); //ES6
+                
                 // Alternatively we could use - const myChilds = Array.prototype.slice.call(box.children) for better browser support
                 myChilds.forEach(function (item, index) {
-                    const value = rating[`${index}`];
+                    const value = rating[index];
                     item.setAttribute("title", value);
                 });
                 $('[data-toggle="tooltip"]').tooltip({ animation: true });
